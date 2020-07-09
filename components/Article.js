@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+/* eslint-disable no-unused-vars */
 /* This is the data we will be using to create our articles */
 /* Look over this data, then proceed to line 91*/
 const data = [
@@ -112,4 +114,38 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 */
 
+function articleMaker(object){
+  const contain = document.createElement('div')
+  const mainTitle = document.createElement('h2')
+  const dateOfArt = document.createElement('p')
+  const par1 = document.createElement('p')
+  const par2 = document.createElement('p')
+  const par3 = document.createElement('p')
+  const expandButton = document.createElement('span')
 
+  expandButton.classList.add('expandButton')
+
+  contain.classList.add('article')
+  dateOfArt.classList.add('date')
+  article.append(mainTitle)
+  article.append(dateOfArt)
+  article.append(par1)
+  article.append(par2)
+  article.append(par3)
+  article.append(expandButton)
+
+  mainTitle.textContent = object.title
+  dateOfArt.textContent = object.date
+  par1.textContent = object.firstParagraph
+  par2.textContent = object.secondParagraph
+  par3.textContent = object.thirdParagraph
+  expandButton.textContent = '+'
+
+
+  return contain
+}
+const container = document.querySelector('.articles')
+
+data.forEach(item => {
+  container.append(articleMaker(item))
+})
